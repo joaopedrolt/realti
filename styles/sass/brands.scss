@@ -1,0 +1,22 @@
+.brands {
+    border-bottom: 1px solid rgba(132, 132, 132, 0.3);
+    border-top: 1px solid rgba(132, 132, 132, 0.3);
+    padding: 50px 30px !important;
+    margin-bottom: 60px;
+
+    .swiper {
+        .swiper-wrapper {
+            height: auto !important;
+
+            .slide {
+                height: 32px !important;
+                text-align: center;
+
+                img {
+                    height: 100%;
+                    user-select: none;
+                }
+            }
+        }
+    }
+}

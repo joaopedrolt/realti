@@ -1,0 +1,101 @@
+.services {
+    .box-container {
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        border-bottom: 1px solid #e8e9f1;
+        padding: 100px 30px;
+
+        .box {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            .icon {
+                display: flex;
+                font-size: 48px;
+                color: $blue;
+                width: 60px;
+                height: 48px;
+            }
+
+            .content {
+                span {
+                    font-size: 18px;
+                    color: $dark-gray;
+                    font-weight: 500;
+                    word-spacing: -2px;
+                }
+
+                p {
+                    margin-top: 10px !important;
+                    font-size: 16px;
+                    font-weight: 300;
+                    color: $gray;
+                    line-height: 26px;
+                    word-spacing: -2px;
+                    word-break: break-word;
+                    max-width: 275px;
+
+                    @media (max-width: 1240px) and (min-width: 1024px) {
+                        max-width: 200px;
+                    }
+                }
+            }
+        }
+
+        .box:nth-child(2) {
+            justify-content: center;
+        }
+
+        .box:last-child {
+            justify-content: end;
+        }
+
+        @media (max-width: $tablet) {
+            padding: 60px 20px;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+
+            .box,
+            .box:nth-child(2),
+            .box:last-child {
+                justify-content: start;
+            }
+
+            .box {
+                .content {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+
+        @media (max-width: $mobile) {
+            .box {
+                flex-direction: column !important;
+                text-align: center;
+                gap: 20px;
+
+                .content {
+                    span {
+                        font-size: 18px;
+                    }
+    
+                    p {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .box:first-child {
+                .icon {
+                    width: auto !important;
+                    height: auto !important;
+                }
+            }
+        }
+    }
+}

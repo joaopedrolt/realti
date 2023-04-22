@@ -1,0 +1,14 @@
+$white: #fff;
+$black: #000;
+$light-gray: #d8d8d8;
+$gray: #888888;
+$dark-gray: #313131;
+$fade-gray: #8888;
+$blue: #3452FF;
+$dark-blue: #0026ff;
+
+@mixin grid($min) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($min, 1fr));
+    gap: 1.5rem;
+}

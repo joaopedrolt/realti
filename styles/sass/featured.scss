@@ -1,0 +1,107 @@
+.featured {
+    .heading {
+        margin-bottom: 20px !important;
+    }
+
+    .swiper{
+        padding: 0 5px;
+    }
+
+    .swiper-wrapper {
+        height: auto !important;
+        padding: 20px 0;
+    }
+
+    .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 45px 20px 0 20px;
+        padding-bottom: 0;
+        border-radius: 25px;
+        overflow: hidden;
+        height: 400px;
+        transition: transform 0.4s ease;
+        box-shadow: rgba(99, 99, 99, 0.15) 0px 2px 8px 0px;
+
+        .image {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            img {
+                width: 100%;
+                transition: all 0.4s ease;
+            }
+        }
+
+        .content {
+            text-align: center;
+            padding: 1rem;
+
+            h3 {
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 8px;
+            }
+
+            p {
+                font-size: 16px;
+                font-weight: 300;
+                transition: all .4s ease;
+            }
+
+            .btn {
+                opacity: 0;
+                transition: all .4s ease;
+            }
+        }
+
+        &:hover {
+            transform: scale(101%);
+
+            .image {
+                img {
+                    transform: scale(110%);
+                }
+            }
+
+            .content {
+                p {
+                    transform: translateY(-10px);
+                    opacity: 0;
+                    user-select: none;
+                }
+
+                .btn {
+                    transform: translateY(-50%);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        top: 50% !important;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        font-size: 20px !important;
+        color: $blue;
+    }
+
+    .swiper-button-next::after{
+        margin-right: 25px;
+    }
+
+    .swiper-button-prev::after {
+        margin-left: 25px;
+    }
+}

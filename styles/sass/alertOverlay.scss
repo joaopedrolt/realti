@@ -1,0 +1,86 @@
+.alert-overlay {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    z-index: 1000;
+    margin-left: 30px;
+
+    .container {
+        display: flex;
+        animation: fadeIn 0.6s ease-in-out forwards;
+        transform-origin: left;
+
+        &.fade-out {
+            animation: fadeOut 0.6s ease-in-out forwards;
+        }
+
+        .content {
+            padding: 19px 20px;
+            display: flex;
+            flex: 1;
+            align-items: center;
+            justify-content: center;
+            color: $white;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        .close {
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            color: $white;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        &.done {
+            .content {
+                background-color: #4460ff;
+            }
+
+            .close {
+                background-color: $blue;
+            }
+        }
+
+        &.error {
+            .content {
+                background-color: #ff5d44;
+            }
+
+            .close {
+                background-color: #ff3434;
+            }
+        }
+    }
+
+    &.active {
+        display: flex !important;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+}

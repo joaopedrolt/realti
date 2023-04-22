@@ -1,0 +1,43 @@
+.newsletter {
+    background-color: #f7f7f7;
+
+    .email-field {
+        display: flex;
+        justify-content: center;
+
+        .input-container {
+            flex: 1;
+            display: flex;
+            max-width: 650px;
+            height: 70px;
+            border-radius: 3px;
+
+            input {
+                width: 100%;
+                padding: 30px 15px;
+            }
+
+            .submit {
+                display: flex;
+                align-items: center;
+                padding: 9.5px 15px 9.5px 0;
+                background-color: $white;
+
+                .btn {
+                    height: 100%;
+                    padding: 13px 30px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: $mobile) {
+        .email-field {
+            .input-container {
+                input {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

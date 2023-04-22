@@ -1,0 +1,165 @@
+.products {
+    .heading {
+        padding: 0 30px;
+    }
+
+    .filter {
+        width: 100%;
+        -webkit-tap-highlight-color: transparent;
+
+        .content {
+            margin: auto;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            box-shadow: 0 25px 98px rgb(0 0 0 / 8%);
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            margin-bottom: 20px;
+
+            .filter-item {
+                flex: 1;
+                display: block;
+                cursor: pointer;
+                text-align: center;
+                padding: 20px;
+                position: relative;
+                transition: all .25s ease-in-out;
+                font-weight: 500;
+                color: $fade-gray;
+
+                &:hover {
+                    color: $blue;
+                }
+
+                &.active {
+                    color: $blue;
+
+                    &::after {
+                        transform: scaleX(1);
+                    }
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 2px;
+                    background-color: $blue;
+                    transform: scaleX(0);
+                    transform-origin: center bottom;
+                    transition: transform 0.25s ease-in-out;
+                }
+            }
+        }
+    }
+
+    .box-container {
+        @include grid(280px);
+        transition: opacity .2s ease-in-out;
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 45px 20px 0 20px;
+            padding-bottom: 0;
+            /*  box-shadow: 0 25px 98px rgb(0 0 0 / 5%); */
+            box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+            border-radius: 25px;
+            overflow: hidden;
+
+            .image {
+                width: 200px;
+                height: 200px;
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    width: 100%;
+                    transition: all 0.4s ease;
+                }
+            }
+
+            .content {
+                text-align: center;
+                padding: 1rem;
+
+                h3 {
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin-bottom: 8px;
+                }
+
+                p {
+                    font-size: 16px;
+                    font-weight: 300;
+                    transition: all .4s ease;
+                }
+
+                .btn {
+                    opacity: 0;
+                    transition: all .4s ease;
+                }
+            }
+
+            &:hover {
+                .image {
+                    img {
+                        transform: scale(110%);
+                    }
+                }
+
+                .content {
+                    p {
+                        transform: translateY(-10px);
+                        opacity: 0;
+                        user-select: none;
+                    }
+
+                    .btn {
+                        transform: translateY(-50%);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: $mobile) {
+        .filter {
+            padding: 0 30px;
+            font-size: 15px;
+
+            .content {
+                box-shadow: none;
+
+                .filter-item {
+                    &.active {
+                        box-shadow: 0 25px 98px rgb(0 0 0 / 8%);
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 420px) {
+        .filter {
+            .content {
+                flex-direction: column;
+
+                .filter-item::after {
+                    display: none;
+                }
+
+                .all {
+                    display: none !important;
+                }
+            }
+        }
+    }
+}

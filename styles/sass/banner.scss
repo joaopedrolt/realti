@@ -1,0 +1,100 @@
+.banner {
+    width: 100%;
+    padding: 150px 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 98px rgb(0 0 0 / 10%);
+    margin-top: 20px;
+
+    .parallex-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(rgba(17, 17, 17, 0.6), rgba(17, 17, 17, 0.6)), url(../../images/banner-bg.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .box-container {
+        width: 100%;
+        display: flex;
+        position: relative;
+        z-index: 10;
+
+        .box {
+            flex: 1;
+            text-align: center;
+            display: flex;
+
+            .content {
+                padding-right: 18px;
+
+                .title {
+                    display: flex;
+                    justify-content: center;
+
+                    h3,
+                    i {
+                        font-size: 28px;
+                        font-weight: 400;
+                        color: $white;
+                    }
+                }
+
+                .count {
+                    opacity: 0;
+                    transform: translateY(20px);
+                    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+
+                    &.visible {
+                        opacity: 1;
+                        transform: none;
+                    }
+                }
+
+                span {
+                    font-size: 16px;
+                    font-weight: 300;
+                    color: $white;
+                    padding-left: 18px;
+                    white-space: nowrap;
+                }
+            }
+        }
+
+        .box:nth-child(2) {
+            justify-content: center;
+        }
+
+        .box:last-child {
+            justify-content: end;
+        }
+    }
+
+    @media (max-width: $tablet) {
+        padding: 100px 30px;
+
+        .box-container {
+            flex-direction: column;
+            gap: 100px;
+
+            .box,
+            .box:nth-child(2),
+            .box:last-child {
+                justify-content: center;
+            }
+        }
+    }
+
+    @media (max-width: $mobile) {
+        .parallex-bg {
+            background: linear-gradient(rgba(17, 17, 17, 0.65), rgba(17, 17, 17, 0.65)), url(../../images/banner-bg-mobile.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    }
+}

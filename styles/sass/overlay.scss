@@ -1,0 +1,193 @@
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10000;
+    background: linear-gradient(rgba(17, 17, 17, 0.6), rgba(17, 17, 17, 0.6)) !important;
+    justify-content: center;
+    align-items: center;
+
+    .content {
+        background-color: $white;
+        border-radius: 5px;
+        max-height: calc(100vh - 20%);
+        width: calc(100vw - 20%);
+        padding: 60px;
+        display: flex;
+        flex-direction: column;
+        transform: scale(0);
+        transition: transform 0.4s ease;
+
+        .header-overlay {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 50px;
+            gap: 30px;
+
+            h1 {
+                font-size: 25px;
+                font-weight: 400;
+                color: $dark-gray;
+            }
+
+            .close {
+                display: flex;
+                align-items: center;
+                font-size: 30px;
+                color: $dark-gray;
+                cursor: pointer;
+                -webkit-tap-highlight-color: transparent;
+            }
+        }
+
+        .main {
+            height: 100%;
+            overflow: auto;
+            max-height: 518px;
+
+            &.terms {
+                .server-info {
+                    display: none;
+                }
+
+                .featured-info {
+                    display: none;
+                }
+            }
+
+            &.server {
+                .terms-content {
+                    display: none;
+                }
+
+                .featured-info {
+                    display: none;
+                }
+            }
+
+            &.featured {
+                .server-info {
+                    display: none;
+                }
+
+                .terms-content {
+                    display: none;
+                }
+            }
+
+            .server-info {
+                .observation {
+                    font-weight: 400;
+                    color: $gray;
+                    margin-top: 50px;
+                }
+
+                .info {
+                    h2 {
+                        color: $dark-gray;
+                        font-size: 20px;
+                        font-weight: 400;
+                        margin-bottom: 15px;
+                    }
+
+                    li {
+                        margin-bottom: 3px;
+
+                        .title {
+                            color: $black;
+                            font-weight: 400;
+                        }
+
+                        .info-content {
+                            color: $dark-gray;
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+
+            .terms-content {
+                font-weight: 300;
+                font-size: 16px;
+                height: inherit;
+            }
+
+            .featured-info {
+                .observation {
+                    font-weight: 400;
+                    color: $gray;
+                    margin-top: 50px;
+                }
+
+                .info {
+                    h2 {
+                        color: $dark-gray;
+                        font-size: 20px;
+                        font-weight: 400;
+                        margin-bottom: 15px;
+                    }
+
+                    li {
+                        margin-bottom: 3px;
+
+                        .title {
+                            color: $black;
+                            font-weight: 400;
+                        }
+
+                        .info-content {
+                            color: $dark-gray;
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.active {
+            transform: scale(1) !important;
+        }
+    }
+
+    @media (max-width: $mobile) {
+        .content {
+            padding: 25px !important;
+
+            .header-overlay {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                margin-bottom: 50px;
+
+                h1 {
+                    font-size: 25px;
+                    font-weight: 400;
+                    color: $dark-gray;
+                }
+
+                .close {
+                    display: flex;
+                    align-items: center;
+                    font-size: 30px;
+                    color: $dark-gray;
+                    cursor: pointer;
+                }
+            }
+
+            .main {
+                height: 100%;
+                overflow: auto;
+
+                p {
+                    font-weight: 300;
+                    font-size: 16px;
+                    height: inherit;
+                }
+            }
+        }
+    }
+}

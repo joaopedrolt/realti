@@ -1,0 +1,99 @@
+.footer {
+    background-color: $dark-gray;
+    padding: 0 30px;
+
+    .box-container {
+        padding: 3rem 0;
+        display: flex;
+
+        .box {
+            flex: 1;
+            text-align: center;
+
+            &.realti {
+                padding-top: 9px;
+
+                svg {
+                    fill: $white;
+                }
+
+                p {
+                    margin: 20px 0;
+                    padding: 0 45px;
+                    color: $white;
+                    font-weight: 300;
+                    font-size: 14px;
+                }
+
+                .terms {
+                    color: $white;
+                    cursor: pointer;
+                    transition: all 0.15s linear;
+                    -webkit-tap-highlight-color: transparent;
+
+                    &:hover {
+                        color: #4460ff;
+                    }
+                }
+            }
+
+            &.dropdown {
+                color: $white;
+                display: flex;
+                flex-direction: column;
+                gap: 11px;
+                font-weight: 300;
+                font-size: 14px;
+
+                h3 {
+                    font-size: 22px;
+                }
+
+                a {
+                    color: $white;
+                    -webkit-tap-highlight-color: transparent;
+                }
+
+                i {
+                    color: #4460ff;
+                    padding-right: 8px;
+                }
+            }
+
+            &.links {
+                a {
+                    transition: all 0.2s linear;
+                    padding-right: 10px;
+
+                    i {
+                        transition: all 0.2s linear;
+                    }
+
+                    &:hover {
+                        color: #4460ff;
+
+                        i {
+                            padding-right: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: $mobile) {
+        .box {
+            flex: 1;
+            text-align: center;
+
+            &.realti {
+                padding-top: 0;
+            }
+        }
+
+        .box-container {
+            flex-direction: column;
+            gap: 40px;
+        }
+    }
+}
