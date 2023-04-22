@@ -27,6 +27,6 @@
 
 <div align="center"><img src="http://drive.google.com/uc?export=view&id=1xq8WUzS7Jp7uGWAcx4C6pauXsoRwqwk2" width=600 alt="Imagem 1" /></div>
 
-<div align="center"><img src="http://drive.google.com/uc?export=view&id=1gQy4VLP80ZX5S1vvTR3ZTsMLF1Yy" width=600 alt="Imagem 2" /></div>
+<div align="center"><img src="http://drive.google.com/uc?export=view&id=1gQy4VLP80ZX5S1vvTR3ZTsMLF1Yy-p9y" width=600 alt="Imagem 2" /></div>
 
 <div align="center"><img src="http://drive.google.com/uc?export=view&id=10ws3GpRZKy6HHKNnjHFMY9_YfuydbD3H" width=300 alt="Imagem 3" /></div>
